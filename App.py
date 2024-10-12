@@ -3,6 +3,15 @@ import pickle
 import string
 import nltk
 nltk.download('punkt_tab')
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 text_porter = PorterStemmer()
 tfidf = pickle.load(open('./vectorizer.pkl', 'rb'))
