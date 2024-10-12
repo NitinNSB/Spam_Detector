@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import string
 import nltk
+nltk.download('punkt_tab')
 from nltk.stem.porter import PorterStemmer
 text_porter = PorterStemmer()
 tfidf = pickle.load(open('./vectorizer.pkl', 'rb'))
